@@ -31,12 +31,12 @@ public class PaymentsController : ControllerBase
 
     private static readonly Dictionary<string, string> PlanNames = new()
     {
-        ["study-plan"]      = "Study Plan",
-        ["single-session"]  = "Single Session",
-        ["doubt-clearing"]  = "Doubt Clearing (Monthly)",
-        ["monthly-1on1"]    = "Monthly 1-on-1 Mentorship",
-        ["intensive-1on1"]  = "Intensive 1-on-1 Mentorship",
-        ["annual-plan"]     = "Annual Mentorship Plan"
+        ["prelims-blueprint"]    = "Prelims Blueprint",
+        ["mains-blueprint"]      = "Mains Mastery Blueprint",
+        ["current-affairs"]      = "Current Affairs Decoded (Monthly)",
+        ["sociology-circle"]     = "Sociology Mentorship Circle (Monthly)",
+        ["personal-mentorship"]  = "Personal UPSC Mentorship (Monthly)",
+        ["intensive-mentorship"] = "Intensive UPSC Mentorship (Monthly)"
     };
 
     public PaymentsController(AppDbContext db, IConfiguration config, IEmailService emailService)
@@ -81,12 +81,12 @@ public class PaymentsController : ControllerBase
         // 2. Determine price in INR
         decimal amountInInr = request.PlanId switch
         {
-            "study-plan" => 299m,
-            "single-session" => 499m,
-            "doubt-clearing" => 599m,
-            "monthly-1on1" => 1999m,
-            "intensive-1on1" => 3999m,
-            "annual-plan" => 17999m,
+            "prelims-blueprint" => 299m,
+            "mains-blueprint" => 499m,
+            "current-affairs" => 399m,
+            "sociology-circle" => 2999m,
+            "personal-mentorship" => 4999m,
+            "intensive-mentorship" => 9999m,
             _ => 0m
         };
 
