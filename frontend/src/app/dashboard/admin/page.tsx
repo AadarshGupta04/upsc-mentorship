@@ -554,7 +554,7 @@ export default function AdminDashboardPage() {
                   type="password"
                   value={oldPassword}
                   onChange={(e) => setOldPassword(e.target.value)}
-                  placeholder="Enter current password (e.g. Admin@123)"
+                  placeholder="Enter current password"
                   className="w-full bg-slate-950 border border-slate-800 hover:border-slate-700 focus:border-emerald-500 rounded-lg px-3.5 py-2 text-white outline-none transition-all"
                 />
               </div>

@@ -30,6 +30,12 @@ public sealed class AdminLoginCommandHandler : IRequestHandler<AdminLoginCommand
         var configPassword = _config["AdminSettings:Password"] ?? "Admin@123";
 
         string inputUsername = request.Username.Trim();
+
+        if (inputUsername != configUsername)
+        {
+            return ApiResponse<AuthResponseDto>.Failure("Invalid admin credentials.");
+        }
+
         string email = inputUsername.Contains("@") ? inputUsername : "admin@upscmentorship.com";
 
         // Find existing admin in database

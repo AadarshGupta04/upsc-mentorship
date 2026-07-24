@@ -157,13 +157,7 @@ export default function AdminLoginPage() {
           </PrimaryButton>
         </form>
 
-        {/* Debug Info */}
-        <div className="mt-8 p-4 bg-slate-100 dark:bg-slate-800 rounded-xl text-xs text-slate-600 dark:text-slate-400">
-          <p className="font-semibold mb-2">System Credentials:</p>
-          <p>• Username: <span className="text-gold font-mono">admin</span></p>
-          <p>• Password: <span className="text-gold font-mono">Admin@123</span></p>
-          <p className="text-slate-500 dark:text-slate-500 mt-2 italic">These credentials are secured in the backend.</p>
-        </div>
+
 
         <div className="mt-6 text-center text-sm text-slate-600 dark:text-slate-400">
           <p>
