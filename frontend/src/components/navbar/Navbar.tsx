@@ -38,6 +38,7 @@ export const Navbar = () => {
   };
 
   const navLinks = [
+    { label: 'About', href: '/about' },
     { label: 'Mentorship', href: '/#mentorship' },
     { label: 'Reviews', href: '/#proven-results' },
     { label: 'Pricing', href: '/pricing' },
