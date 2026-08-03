@@ -2,8 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, ArrowDown } from 'lucide-react';
+import { ArrowUpRight, ArrowDown, Target, RotateCcw, Sparkles } from 'lucide-react';
 
 export default function AboutPage() {
   const handleBookCall = () => {
@@ -19,6 +18,29 @@ export default function AboutPage() {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  const expectations = [
+    {
+      num: '01',
+      title: 'A realistic strategy',
+      desc: 'A plan designed around your preparation stage, strengths, constraints and goals.',
+    },
+    {
+      num: '02',
+      title: 'Honest feedback',
+      desc: 'Direct guidance that helps you identify mistakes before they become habits.',
+    },
+    {
+      num: '03',
+      title: 'Focused resources',
+      desc: 'Less resource collection. More attention on what truly matters.',
+    },
+    {
+      num: '04',
+      title: 'Weekly accountability',
+      desc: 'Support to stay consistent without making you dependent on a mentor.',
+    },
+  ];
 
   const metrics = [
     { value: '18K+', label: 'LinkedIn community', highlight: false },
@@ -95,16 +117,39 @@ export default function AboutPage() {
 
   const activities = [
     {
-      img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800',
+      img: '/images/about/ai_summit.png',
       title: 'AI Impact Summit, India',
     },
     {
-      img: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800',
+      img: '/images/about/tech_engagement.png',
       title: 'Technology & AI engagement',
     },
     {
-      img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800',
+      img: '/images/about/bharat_mandapam.png',
       title: 'Professional events at Bharat Mandapam',
+    },
+  ];
+
+  const values = [
+    {
+      icon: <ArrowUpRight className="w-6 h-6 text-gold" />,
+      title: 'No shortcuts',
+      desc: 'No guaranteed ranks. Only a preparation strategy that can stand up to honest review.',
+    },
+    {
+      icon: <Target className="w-6 h-6 text-gold" />,
+      title: 'No noise',
+      desc: 'Focus on the resources and actions that matter instead of every new distraction.',
+    },
+    {
+      icon: <RotateCcw className="w-6 h-6 text-gold" />,
+      title: 'Personal guidance',
+      desc: "A mentor should understand a student's context—not just complete a batch syllabus.",
+    },
+    {
+      icon: <Sparkles className="w-6 h-6 text-gold" />,
+      title: 'Accessible quality',
+      desc: 'Genuine, personalised mentorship should remain within reach for serious aspirants.',
     },
   ];
 
@@ -157,7 +202,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[420px] aspect-[4/5] rounded-2xl overflow-hidden group shadow-[0_20px_50px_rgba(11,20,38,0.15)] border-4 border-white">
               <Image
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=800&h=1000"
+                src="/images/about/eshwar_portrait.png"
                 alt="Eshwar Ramisetti"
                 fill
                 priority
@@ -223,6 +268,58 @@ export default function AboutPage() {
                 “UPSC isn't won by the person who studies the most. It's won by the person who studies with clarity, consistency and the right strategy.”
               </blockquote>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION: Built around you, not the batch. */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-28">
+        <div className="flex items-center gap-2 mb-4">
+          <span className="h-[2px] w-6 bg-gold" />
+          <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">WHAT YOU CAN EXPECT</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy mb-12">
+          Built around you, not the batch.
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {expectations.map((exp, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-8 rounded-3xl border border-gray-100 shadow-md shadow-navy/5 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <span className="font-serif italic text-gold text-lg font-bold mb-4">{exp.num}</span>
+              <h4 className="text-lg font-bold text-navy mb-2">{exp.title}</h4>
+              <p className="text-gray-500 text-sm font-medium leading-relaxed">{exp.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Mission & Vision cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {/* Mission */}
+          <div className="bg-navy p-10 rounded-3xl text-white relative overflow-hidden shadow-xl shadow-navy/10">
+            <div className="absolute top-0 right-0 w-48 h-48 bg-gold/5 rounded-full blur-2xl pointer-events-none" />
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-[2px] w-6 bg-gold" />
+              <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">OUR MISSION</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-4">Make quality guidance more accessible.</h3>
+            <p className="text-slate-300 text-sm sm:text-base font-medium leading-relaxed">
+              To offer affordable, genuinely personalized UPSC mentorship built on strategic preparation, clear structure and ongoing accountability.
+            </p>
+          </div>
+
+          {/* Vision */}
+          <div className="bg-[#FAF7F2] p-10 rounded-3xl text-navy relative overflow-hidden shadow-xl shadow-navy/5 border border-gray-100">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="h-[2px] w-6 bg-gold" />
+              <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">OUR VISION</span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold mb-4">A trusted place to prepare with purpose.</h3>
+            <p className="text-gray-600 text-sm sm:text-base font-medium leading-relaxed">
+              To build a strategy-first mentorship platform where serious aspirants feel supported in planning, executing and growing through the UPSC journey.
+            </p>
           </div>
         </div>
       </section>
@@ -335,7 +432,7 @@ export default function AboutPage() {
       </section>
 
       {/* Beyond UPSC Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-28">
         <div className="flex items-center gap-2 mb-4">
           <span className="h-[2px] w-6 bg-gold" />
           <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">BEYOND UPSC</span>
@@ -366,6 +463,73 @@ export default function AboutPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* NEW SECTION: The standards behind every interaction. */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-28">
+        <div className="flex items-center gap-2 mb-4 justify-center">
+          <span className="h-[2px] w-6 bg-gold" />
+          <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">CORE VALUES</span>
+        </div>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-navy text-center mb-16">
+          The standards behind every interaction.
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {values.map((val, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-8 rounded-3xl border border-gray-100 shadow-md shadow-navy/5 flex flex-col transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <div className="w-12 h-12 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+                {val.icon}
+              </div>
+              <h4 className="text-lg font-bold text-navy mb-2">{val.title}</h4>
+              <p className="text-gray-500 text-sm font-medium leading-relaxed">{val.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* NEW SECTION: Let's build your journey together. (CTA Banner) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-[#0B1426] rounded-[2.5rem] p-10 sm:p-16 text-white relative overflow-hidden shadow-2xl shadow-navy/30">
+          {/* Saffron background glow */}
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[100px] pointer-events-none" />
+          
+          <div className="relative z-10 max-w-3xl space-y-6">
+            <div className="flex items-center gap-2">
+              <span className="h-[2px] w-6 bg-gold" />
+              <span className="text-gold font-bold uppercase tracking-[0.2em] text-xs">BEGIN WITH CLARITY</span>
+            </div>
+            
+            <h2 className="text-3xl sm:text-5xl font-serif font-bold leading-tight">
+              Let's build your journey <br />together.
+            </h2>
+            
+            <p className="text-slate-300 font-medium leading-relaxed text-sm sm:text-base">
+              Whether you are beginning your first attempt, preparing alongside a job, or returning stronger after earlier attempts, the commitment stays the same: clarity, confidence and a strategy you can trust.
+            </p>
+
+            <div className="flex flex-wrap items-center gap-6 pt-4">
+              <button
+                onClick={handleBookCall}
+                className="flex items-center gap-2 rounded-full bg-gold px-8 py-4 text-sm font-bold uppercase tracking-widest text-navy shadow-lg shadow-gold/20 hover:bg-gold-light transition-all duration-300 hover:scale-105"
+              >
+                Book a Free Call
+                <ArrowUpRight className="w-4 h-4 text-navy" />
+              </button>
+
+              <a
+                href="/"
+                className="flex items-center gap-1 text-sm font-bold uppercase tracking-widest text-white border-b-2 border-gold/50 hover:border-gold hover:text-gold transition-colors pb-1"
+              >
+                Visit UPSCwithEshwar
+                <ArrowUpRight className="w-4 h-4 text-gold" />
+              </a>
+            </div>
+          </div>
         </div>
       </section>
     </div>
